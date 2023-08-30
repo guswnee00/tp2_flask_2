@@ -3,6 +3,7 @@ import shutil
 import os
 from ultralytics import YOLO
 
+
 # 허용된 확장자 설정
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'gif'}
 
@@ -20,7 +21,8 @@ def load_yolo_model(model_path = '/Users/hyunjulee/tp2/tp2_flask_2/model/best_1.
 
 # 모델을 사용해서 예측하는 함수
 def predict_image(model, image_path):
-    
+    cv2.init()
+
     # 이미지 읽어오기
     image = cv2.imread(image_path)
 
