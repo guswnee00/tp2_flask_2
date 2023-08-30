@@ -1,9 +1,6 @@
-pytorch==2.0.0
+ultralytics==8.0.161
 cuda==11.8
-torchvision==0.15.0 
-torchaudio==2.0.0 
+Flask==2.0.0
+gunicorn==20.1.0
 tensorflow==2.12 
 keras==2.12
-Flask==2.0.0
-ultralytics==8.0.161
-gunicorn==20.1.0
