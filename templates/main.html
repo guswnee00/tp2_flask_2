@@ -1,0 +1,44 @@
+<!-- 메인 페이지 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page</title>
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image {
+            width: 45%; /* 이미지 너비를 조절하여 여백 만들기 */
+        }
+    </style>
+</head>
+<body>
+    <h1>Main Page</h1>
+
+    <!-- 이미지 업로드 폼 -->
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <input type="submit" value="Upload Image">
+    </form>
+
+    <!-- 업로드된 이미지와 예측된 이미지를 가로로 표시 -->
+    <div class="image-container">
+        {% if image_path %}
+            <div class="image">
+                <h2>Uploaded Image</h2>
+                <img src="{{ image_path }}" alt="Uploaded Image" width="100%">
+            </div>
+        {% endif %}
+
+        <!-- 예측된 이미지 표시 -->
+        {% if predictions %}
+            <div class="image">
+                <h2>Predicted Image</h2>
+                <img src="{{ predictions }}" alt="Predicted Image" width="100%">
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
